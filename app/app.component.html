@@ -6,14 +6,14 @@
       <a target="_blank" class="nav-link" href="https://github.com/fabiomdiniz/spotifash"><i class="fa fa-github-alt" aria-hidden="true"></i>&nbsp;</a>
     </li>
   </ul>
-  <ul class="nav navbar-nav pull-xs-right">
+  <ul *ngIf="token" class="nav navbar-nav pull-xs-right">
     <li *ngIf="user && user.images.length" class="nav-item">
       <img class="user-icon" [src]="getUserImage()"/>
     </li>
     <li *ngIf="user" class="nav-item">
       <a class="nav-link" href="#">{{ user.display_name }}</a>
     </li>
-    <li *ngIf="token" class="nav-item">
+    <li class="nav-item">
       <a class="nav-link" href="#" (click)="goLogout()">
         <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
       </a>
