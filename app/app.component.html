@@ -2,10 +2,20 @@
   <a class="navbar-brand" href="#">{{title}}</a>
   <ul class="nav navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" href="#">Source</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Contact</a>
+  </ul>
+  <ul class="nav navbar-nav pull-xs-right">
+    <li *ngIf="user" class="nav-item">
+      <img class="user-icon" [src]="getUserImage()"/>
+    </li>
+    <li *ngIf="user" class="nav-item">
+      <a class="nav-link" href="#">{{ user.display_name }}</a>
+    </li>
+    <li *ngIf="token" class="nav-item">
+      <a class="nav-link" href="#" (click)="goLogout()">
+        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+      </a>
     </li>
   </ul>
 </nav>
@@ -17,7 +27,7 @@
   </button>
 </div>
 <div class="row" *ngIf="token">
-  <div *ngFor="let track of topTracks.items">
+  <div class="col-md-2" *ngFor="let track of topTracks.items">
     <my-track [track]="track"></my-track>
   </div>
 </div>

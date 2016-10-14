@@ -2,6 +2,11 @@ export class Image {
   url: string;
 }
 
+export class User {
+  images: Image[];
+  display_name: string;
+}
+
 export class Artist {
   name: string;
   images: Image[];

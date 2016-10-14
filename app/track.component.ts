@@ -9,7 +9,9 @@ import { Track } from './track';
                              <img [src]="getImage()" class="profile"/>
       <figcaption>
         <h3>{{ track.name }}<span>{{ track.artists[0].name }}</span></h3>
-        <div class="icons"><a href="#"><i class="ion-social-reddit-outline"></i></a><a href="#"> <i class="ion-social-twitter-outline"></i></a><a href="#"> <i class="ion-social-vimeo-outline"></i></a></div>
+        <div class="icons">
+          <a target="_blank" [href]="track.external_urls.spotify"><i class="ion-ios-play-outline"></i></a>
+        </div>
       </figcaption>
     </figure>
   </div>

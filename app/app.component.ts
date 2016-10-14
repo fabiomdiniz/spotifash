@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import SpotifyService from './spotify';
-import { Hero } from './hero';
+import { User } from './track';
 
 @Component({
   selector: 'my-app',
@@ -22,7 +22,7 @@ import { Hero } from './hero';
 export class AppComponent implements OnInit {
   title = 'Spotifash';
   token = '';
-  user = {};
+  user: User;
   topTracks = {};
   topArtists = {};
   constructor(private spotifyService: SpotifyService) {
@@ -37,6 +37,10 @@ export class AppComponent implements OnInit {
     this.spotifyService.getCurrentUser().subscribe(data => {
       this.user = data;
       console.log(this.user);
+    },
+    err => {
+      console.error(err);
+      this.goLogout();
     });
 
     this.spotifyService.getCurrentUserTopTracks().subscribe(data => {
@@ -59,5 +63,15 @@ export class AppComponent implements OnInit {
             },
             err => console.error(err),
             () => { });
+  }
+  goLogout(): void {
+    this.token = '';
+    this.user = new User();
+    localStorage.removeItem('angular2-spotify-token');
+  }
+  getUserImage(): string {
+    if(this.user && this.user.images.length > 0) {
+      return this.user.images[0].url;
+    }
   }
 }
