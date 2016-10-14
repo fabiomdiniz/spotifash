@@ -2,8 +2,8 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import {HttpModule} from '@angular/http';
+import { TrackComponent } from './track.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import {HttpModule} from '@angular/http';
   ],
   declarations: [
     AppComponent,
-    HeroDetailComponent
+    TrackComponent
   ],
   bootstrap: [ AppComponent ]
 })

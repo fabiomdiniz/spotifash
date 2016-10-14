@@ -1,0 +1,24 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact</a>
+    </li>
+  </ul>
+</nav>
+<div class="container-fluid">
+<div class="text-center" *ngIf="!token">
+  <img src="http://25.media.tumblr.com/tumblr_mdtzgsKeaT1rlzw9do1_500.gif" />
+  <button  class="btn btn-success"  (click)="goLogin()">
+    Log to spotify
+  </button>
+</div>
+<div class="row" *ngIf="token">
+  <div *ngFor="let track of topTracks.items">
+    <my-track [track]="track"></my-track>
+  </div>
+</div>
+</div>
