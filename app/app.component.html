@@ -7,7 +7,7 @@
     </li>
   </ul>
   <ul *ngIf="token" class="nav navbar-nav pull-xs-right">
-    <li *ngIf="user && user.images.length" class="nav-item">
+    <li *ngIf="user && user.images && user.images.length" class="nav-item">
       <img class="user-icon" [src]="getUserImage()"/>
     </li>
     <li *ngIf="user" class="nav-item">
