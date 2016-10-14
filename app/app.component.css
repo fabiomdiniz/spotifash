@@ -6,3 +6,12 @@
   height: 38px;
   border-radius: 50%;
 }
+
+.logo {
+  position: absolute;
+  height: 40px;
+}
+
+.navbar-brand {
+  margin-left: 95px;
+}

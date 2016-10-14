@@ -5,12 +5,13 @@ import { Track } from './track';
   selector: 'my-track',
   template: `
   <div *ngIf="track">
-    <figure class="track-card"><img [src]="getImage()" class="background"/>
-                             <img [src]="getImage()" class="profile"/>
+    <figure class="track-card">
+      <img [src]="getImage()" class="background"/>
+      <img [src]="getImage()" class="profile"/>
       <figcaption>
         <h3>{{ track.name }}<span>{{ track.artists[0].name }}</span></h3>
         <div class="icons">
-          <a target="_blank" [href]="track.external_urls.spotify"><i class="ion-ios-play-outline"></i></a>
+          <a target="_blank" [href]="track.external_urls.spotify"><i class="fa fa-spotify"></i></a>
         </div>
       </figcaption>
     </figure>
@@ -68,7 +69,7 @@ import { Track } from './track';
 .track-card h3 {
   margin: 0 0 5px;
   font-weight: 400;
-  font-size: 1.50rem;
+  font-size: 1.30rem;
 }
 .track-card h3 span {
   display: block;
