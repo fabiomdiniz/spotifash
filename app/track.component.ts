@@ -17,7 +17,6 @@ import { Track } from './track';
   </div>
 `,
   styles: [`@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
-@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 .track-card {
   font-family: 'Open Sans', Arial, sans-serif;
   position: relative;
